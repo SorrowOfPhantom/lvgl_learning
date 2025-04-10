@@ -39,6 +39,38 @@ It has all the features to create modern and beautiful GUIs: 30+ built-in widget
 **Services**<br>
 Our team is ready to help you with graphics design, UI implementation and consulting services. Contact us if you need some support during the development of your next GUI project.
 
+**Content**<br>
+
+```mermaid
+graph LR
+    A[lvgl] --> B[src/源码]
+    A --> C[docs/文档]
+    A --> D[examples/示例]
+    A --> E[tests/测试]
+    A --> F[demos/演示]
+    A --> G[配置文件]
+    
+    B --> B1[core/核心功能]
+    B --> B2[draw/绘图功能]
+    B --> B3[font/字体]
+    B --> B4[hal/硬件抽象层]
+    B --> B5[misc/杂项功能]
+    B --> B6[widgets/UI控件]
+    
+    C --> C1[入门指南]
+    C --> C2[概述文档]
+    C --> C3[API文档]
+    
+    D --> D1[控件示例]
+    D --> D2[布局示例]
+    D --> D3[样式示例]
+    
+    G --> G1[CMakeLists.txt/编译配置]
+    G --> G2[LICENSE/许可证]
+    G --> G3[README.md/说明文档]
+    G --> G4[lv_conf_template.h/配置模板]
+::: 
+
 
 ## :rocket: Features
 
