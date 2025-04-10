@@ -43,32 +43,124 @@ Our team is ready to help you with graphics design, UI implementation and consul
 
 ```mermaid
 graph LR
-    A[lvgl] --> B[src/源码]
-    A --> C[docs/文档]
-    A --> D[examples/示例]
-    A --> E[tests/测试]
-    A --> F[demos/演示]
-    A --> G[配置文件]
+    classDef folder fill:#E5F6FF,stroke:#73A6FF,stroke-width:2px;
+    classDef file fill:#FFEBEB,stroke:#E68994,stroke-width:2px;
     
-    B --> B1[core/核心功能]
-    B --> B2[draw/绘图功能]
-    B --> B3[font/字体]
-    B --> B4[hal/硬件抽象层]
-    B --> B5[misc/杂项功能]
-    B --> B6[widgets/UI控件]
+    lvgl(lvgl):::folder
+    lvgl --> docs(docs):::folder
+    lvgl --> demos(demos):::folder
+    lvgl --> src(src):::folder
+    lvgl --> scripts(scripts):::folder
+    lvgl --> examples(examples):::folder
+    lvgl --> tests(tests):::folder
+    lvgl --> .github(.github):::folder
+    lvgl --> .devcontainer(.devcontainer):::folder
+    lvgl --> README.md(README.md):::file
+    lvgl --> requirements.txt(requirements.txt):::file
     
-    C --> C1[入门指南]
-    C --> C2[概述文档]
-    C --> C3[API文档]
+    docs --> README_zh.md(README_zh.md):::file
+    docs --> README_pt_BR.md(README_pt_BR.md):::file
+    docs --> README_jp.md(README_jp.md):::file
     
-    D --> D1[控件示例]
-    D --> D2[布局示例]
-    D --> D3[样式示例]
+    demos --> widgets(lv_demo_widgets.c):::file
+    demos --> render(lv_demo_render.c):::file
+    demos --> music(lv_demo_music_main.c):::file
     
-    G --> G1[CMakeLists.txt/编译配置]
-    G --> G2[LICENSE/许可证]
-    G --> G3[README.md/说明文档]
-    G --> G4[lv_conf_template.h/配置模板]
+    src --> misc(misc):::folder
+    src --> display(display):::folder
+    src --> core(core):::folder
+    src --> osal(osal):::folder
+    src --> libs(libs):::folder
+    src --> drivers(drivers):::folder
+    src --> draw(draw):::folder
+    src --> layouts(layouts):::folder
+    src --> widgets(widgets):::folder
+    src --> others(others):::folder
+    
+    misc --> lv_array.h(lv_array.h):::file
+    misc --> lv_types.h(lv_types.h):::file
+    misc --> lv_tree.h(lv_tree.h):::file
+    misc --> lv_anim.h(lv_anim.h):::file
+    misc --> lv_rb.c(lv_rb.c):::file
+    misc --> lv_anim.c(lv_anim.c):::file
+    misc --> lv_anim_timeline.c(lv_anim_timeline.c):::file
+    
+    display --> lv_display_private.h(lv_display_private.h):::file
+    display --> lv_display.h(lv_display.h):::file
+    display --> lv_display.c(lv_display.c):::file
+    
+    core --> lv_obj_tree.h(lv_obj_tree.h):::file
+    core --> lv_obj_tree.c(lv_obj_tree.c):::file
+    
+    osal --> lv_os_none.h(lv_os_none.h):::file
+    
+    libs --> svg(svg):::folder
+    libs --> qrcode(qrcode):::folder
+    libs --> thorvg(thorvg):::folder
+    libs --> nema_gfx(nema_gfx):::folder
+    libs --> fsdrv(fsdrv):::folder
+    libs --> expat(expat):::folder
+    libs --> gif(gif):::folder
+    libs --> tjpgd(tjpgd):::folder
+    
+    svg --> lv_svg_render.c(lv_svg_render.c):::file
+    qrcode --> qrcodegen.c(qrcodegen.c):::file
+    thorvg --> rapidjson(rapidjson):::folder
+    thorvg --> tvgLottieParser.cpp(tvgLottieParser.cpp):::file
+    thorvg --> tvgLottieModel.h(tvgLottieModel.h):::file
+    thorvg --> thorvg.h(thorvg.h):::file
+    rapidjson --> stream.h(stream.h):::file
+    rapidjson --> schema.h(schema.h):::file
+    nema_gfx --> include(include):::folder
+    include --> nema_core.h(nema_core.h):::file
+    fsdrv --> lv_fs_fatfs.c(lv_fs_fatfs.c):::file
+    fsdrv --> lv_fs_arduino_esp_littlefs.cpp(lv_fs_arduino_esp_littlefs.cpp):::file
+    expat --> xmltok.c(xmltok.c):::file
+    gif --> gifdec.c(gifdec.c):::file
+    tjpgd --> tjpgd.c(tjpgd.c):::file
+    
+    drivers --> wayland(wayland):::folder
+    wayland --> lv_wayland.c(lv_wayland.c):::file
+    wayland --> lv_wayland_smm.c(lv_wayland_smm.c):::file
+    
+    draw --> renesas(renesas):::folder
+    draw --> sw(sw):::folder
+    draw --> nema_gfx(nema_gfx):::folder
+    renesas --> dave2d(dave2d):::folder
+    dave2d --> lv_draw_dave2d_image.c(lv_draw_dave2d_image.c):::file
+    sw --> arm2d(arm2d):::folder
+    arm2d --> lv_draw_sw_helium.h(lv_draw_sw_helium.h):::file
+    nema_gfx --> lv_draw_nema_gfx_stm32_hal.c(lv_draw_nema_gfx_stm32_hal.c):::file
+    
+    layouts --> grid(grid):::folder
+    grid --> lv_grid.c(lv_grid.c):::file
+    
+    widgets --> buttonmatrix(buttonmatrix):::folder
+    widgets --> lottie(lottie):::folder
+    buttonmatrix --> lv_buttonmatrix.c(lv_buttonmatrix.c):::file
+    lottie --> lv_lottie.c(lv_lottie.c):::file
+    
+    others --> sysmon(sysmon):::folder
+    sysmon --> lv_sysmon.c(lv_sysmon.c):::file
+    
+    scripts --> gen_json(gen_json):::folder
+    scripts --> gdb(gdb):::folder
+    gen_json --> pycparser_monkeypatch.py(pycparser_monkeypatch.py):::file
+    gdb --> lvglgdb(lvglgdb):::folder
+    lvglgdb --> lvgl.py(lvgl.py):::file
+    
+    examples --> scroll(scroll):::folder
+    examples --> anim(anim):::folder
+    scroll --> lv_example_scroll_5.c(lv_example_scroll_5.c):::file
+    anim --> lv_example_anim_3.c(lv_example_anim_3.c):::file
+    
+    tests --> src(src):::folder
+    src --> test_cases(test_cases):::folder
+    test_cases --> test_tree.c(test_tree.c):::file
+    
+    .github --> dependabot.yml(dependabot.yml):::file
+    
+    .devcontainer --> devcontainer.json(devcontainer.json):::file
 ```
 
 ## :rocket: Features
