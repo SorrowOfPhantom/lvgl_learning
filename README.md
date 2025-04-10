@@ -69,8 +69,7 @@ graph LR
     G --> G2[LICENSE/许可证]
     G --> G3[README.md/说明文档]
     G --> G4[lv_conf_template.h/配置模板]
-::: 
-
+```
 
 ## :rocket: Features
 
