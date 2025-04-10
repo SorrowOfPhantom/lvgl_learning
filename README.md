@@ -39,6 +39,19 @@ It has all the features to create modern and beautiful GUIs: 30+ built-in widget
 **Services**<br>
 Our team is ready to help you with graphics design, UI implementation and consulting services. Contact us if you need some support during the development of your next GUI project.
 
+**Content**<br>
+---
+config:
+  layout: fixed
+---
+flowchart LR
+    A["lvgl"] --> B["src/源码"] & C["docs/文档"] & D["examples/示例"] & E["tests/测试"] & F["demos/演示"] & G["配置文件"]
+    B --> B1["core/核心功能"] & B2["draw/绘图功能"] & B3["font/字体"] & B4["hal/硬件抽象层"] & B5["misc/杂项功能"] & B6["widgets/UI控件"]
+    C --> C1["入门指南"] & C2["概述文档"] & C3["API文档"]
+    D --> D1["控件示例"] & D2["布局示例"] & D3["样式示例"]
+    G --> G1["CMakeLists.txt/编译配置"] & G2["LICENSE/许可证"] & G3["README.md/说明文档"] & G4["lv_conf_template.h/配置模板"]
+
+
 ## :rocket: Features
 
 **Free and Portable**
